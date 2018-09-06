@@ -4,8 +4,10 @@ import PageEditor from "./editor/PageEditor"
 
 const App = () => (
     <Grid container justify="center">
-      <Grid item xs={12}>
-      <center><PageEditor/></center>
+      <Grid item xs={8}>
+      <center>
+        <PageEditor/>
+      </center>
       </Grid>
     </Grid>
   )
