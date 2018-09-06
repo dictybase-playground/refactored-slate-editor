@@ -12,6 +12,10 @@ const styles = theme => ({
   },
 })
 
+/**
+ * Material-UI button that has a click handler attached to it.
+ */
+
 const ToolbarButton = ({ children, onClick, classes, ...props }) => {
   const handleClick = e => {
     isFunction(onClick) && onClick(e)

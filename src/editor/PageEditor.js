@@ -7,6 +7,10 @@ import renderMark from "./renderers/renderMark"
 import plugins from "./plugins/plugins"
 import initialValue from "./data/initialValue.json"
 
+/**
+ * The main PageEditor component. It displays both the toolbar and the Slate Editor component, passing in value and onChange as props to both.
+ */
+
 class PageEditor extends React.Component {
   state = {
     value: Value.fromJSON(initialValue),

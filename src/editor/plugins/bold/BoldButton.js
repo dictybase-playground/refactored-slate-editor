@@ -5,6 +5,10 @@ import ToolbarButton from "../../toolbar/ToolbarButton"
 
 import { boldMarkStrategy } from "./BoldUtils"
 
+/**
+ * Bold button that uses a click handler to connect the button to the editor.
+ */
+
 const BoldButton = ({ value, onChange }) => {
   const handleClick = e => {
     onChange(boldMarkStrategy(value.change()))

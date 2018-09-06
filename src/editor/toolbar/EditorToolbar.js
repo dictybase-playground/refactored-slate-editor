@@ -12,6 +12,10 @@ const styles = theme => ({
   },
 })
 
+/**
+ * The toolbar for the page editor. It uses Material-UI's AppBar component as the foundation, then displays individual buttons inside of it.
+ */
+
 const EditorToolbar = props => {
   const { classes } = props
   return (
