@@ -3,6 +3,8 @@ import { Editor } from "slate-react"
 import { Value } from "slate"
 
 import EditorToolbar from "./toolbar/EditorToolbar"
+import renderMark from "./renderers/renderMark"
+import plugins from "./plugins/plugins"
 import initialValue from "./data/initialValue.json"
 
 class PageEditor extends React.Component {
@@ -21,7 +23,12 @@ class PageEditor extends React.Component {
       <div>
         <EditorToolbar value={value} onChange={this.onChange} />
         <br />
-        <Editor value={value} onChange={this.onChange} />
+        <Editor
+          value={value}
+          onChange={this.onChange}
+          renderMark={renderMark}
+          plugins={plugins}
+        />
       </div>
     )
   }
