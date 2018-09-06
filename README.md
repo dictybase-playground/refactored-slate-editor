@@ -1,0 +1,1 @@
+Building a better Slate editor from scratch with plugins. Adding documentation and tests as I go along.
