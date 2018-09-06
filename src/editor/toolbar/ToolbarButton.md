@@ -1,3 +1,3 @@
 ```js
-;<ToolbarButton>B</ToolbarButton>
+<ToolbarButton>B</ToolbarButton>
 ```
