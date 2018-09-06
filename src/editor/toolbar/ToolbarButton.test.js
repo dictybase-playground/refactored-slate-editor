@@ -11,4 +11,8 @@ describe("editor/toolbar/ToolbarButton", () => {
       expect(wrapper.find(Button).length).toBe(1)
     })
   })
+
+  describe("handleClick", () => {
+    // line 17
+  })
 })

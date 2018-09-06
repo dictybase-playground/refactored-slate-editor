@@ -11,4 +11,8 @@ describe("editor/PageEditor", () => {
       expect(wrapper.find(Editor).length).toBe(1)
     })
   })
+
+  describe("onChange method", () => {
+    // line 16
+  })
 })
