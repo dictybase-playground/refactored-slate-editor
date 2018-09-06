@@ -2,7 +2,7 @@ import React from "react"
 import { Editor } from "slate-react"
 import { Value } from "slate"
 
-import Toolbar from "./toolbar/Toolbar"
+import EditorToolbar from "./toolbar/EditorToolbar"
 import initialValue from "./data/initialValue.json"
 
 class PageEditor extends React.Component {
@@ -19,8 +19,8 @@ class PageEditor extends React.Component {
 
     return (
       <div>
-        <Toolbar value={value} onChange={this.onChange} />
-        <br/>
+        <EditorToolbar value={value} onChange={this.onChange} />
+        <br />
         <Editor value={value} onChange={this.onChange} />
       </div>
     )
