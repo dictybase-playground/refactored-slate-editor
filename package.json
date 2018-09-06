@@ -13,6 +13,12 @@
     "slate-react": "^0.18.5"
   },
   "scripts": {
+    "prettier": "prettier --version",
+    "precommit": "lint-staged",
+    "flow": "flow",
+    "styleguide": "styleguidist server",
+    "styleguide:build": "styleguidist build",
+    "cz": "git-cz",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
@@ -21,6 +27,28 @@
   },
   "devDependencies": {
     "ajv": "^6.5.3",
-    "flow-bin": "^0.80.0"
+    "babel-eslint": "^7.2.3",
+    "cz-conventional-changelog": "^2.1.0",
+    "eslint": "^4.1.1",
+    "eslint-plugin-flowtype": "^2.34.1",
+    "eslint-plugin-import": "^2.6.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.1.0",
+    "flow-bin": "^0.80.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.2.2",
+    "prettier": "^1.14.2",
+    "react-styleguidist": "^7.3.5"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,json,css}": [
+      "prettier --no-semi --trailing-comma all --jsx-bracket-same-line true --write",
+      "git add"
+    ]
   }
 }
