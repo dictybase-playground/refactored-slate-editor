@@ -4,12 +4,16 @@ import { Value } from "slate"
 
 import EditorToolbar from "./toolbar/EditorToolbar"
 import initialValue from "./data/initialValue.json"
+
 import { BoldMark } from "./plugins/bold"
+import { ItalicMark } from "./plugins/italic"
+
 import { BoldPlugin } from "./plugins/bold"
+import { ItalicPlugin } from "./plugins/italic"
 
 // all of the plugins that go into our editor
 // these are generally keyboard shortcuts
-const plugins = [BoldPlugin()]
+const plugins = [BoldPlugin(), ItalicPlugin()]
 
 // necessary renderMark function that receives the mark type then renders the HTML
 // in our case, we are returning custom components
@@ -19,6 +23,8 @@ const renderMark = (props: Props) => {
   switch (mark.type) {
     case "bold":
       return <BoldMark {...props} />
+    case "italic":
+      return <ItalicMark {...props} />
 
     default:
       return null
