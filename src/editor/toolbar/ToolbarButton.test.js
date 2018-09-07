@@ -13,6 +13,6 @@ describe("editor/toolbar/ToolbarButton", () => {
   })
 
   describe("handleClick", () => {
-    // line 17
+    // what happens when user clicks button?
   })
 })
