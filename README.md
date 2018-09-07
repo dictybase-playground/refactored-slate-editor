@@ -10,12 +10,13 @@ _/editor/plugins_ - this is the home of all of our plugins
 
 - each plugin has its own file (i.e. `bold.js`, `italic.js`, etc.)
 - each plugin file contains all of the logic related to that feature
-- generally, this file consists of three exports (using `bold` as example): 1) `BoldPlugin` - the exported nested function that is implemented into the editor's `plugins` array
+- generally, this file consists of three exports (using `bold` as example):
+  1. `BoldPlugin` - the exported nested function that is implemented into the editor's `plugins` array
   2. `BoldMark` - the React component that handles rendering (needs to be placed into `renderMark` for use in the editor)
   3. `BoldButton` - the React component that displays a button and uses a click handler to connect to the editor (used in our toolbar)
 
 _/editor/schema_ - any schema for the editor will be placed here
-  
+
 _/editor/toolbar_ - everything related to the toolbar
 
 - at minimum, this has the `EditorToolbar` component and generic `ToolbarButton` component
