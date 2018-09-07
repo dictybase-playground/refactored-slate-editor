@@ -2,7 +2,7 @@ import React from "react"
 import Button from "@material-ui/core/Button"
 import { withStyles } from "@material-ui/core/styles"
 
-import { isFunction } from "../utils/isFunction"
+import { isFunction } from "editor/utils/isFunction"
 
 const styles = theme => ({
   button: {

@@ -1,9 +1,9 @@
 import React from "react"
 import Tooltip from "@material-ui/core/Tooltip"
 import FormatBoldIcon from "@material-ui/icons/FormatBold"
-import ToolbarButton from "../../toolbar/ToolbarButton"
+import ToolbarButton from "editor/toolbar/ToolbarButton"
 
-import { boldMarkStrategy } from "./BoldUtils"
+import { boldMarkStrategy } from "./"
 
 /**
  * Bold button that uses a click handler to connect the button to the editor.
