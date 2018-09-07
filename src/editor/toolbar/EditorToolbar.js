@@ -4,7 +4,7 @@ import Toolbar from "@material-ui/core/Toolbar"
 import Typography from "@material-ui/core/Typography"
 import { withStyles } from "@material-ui/core/styles"
 
-import { BoldButton } from "../plugins/bold"
+import { BoldButton } from "editor/plugins/bold"
 
 const styles = theme => ({
   toolbar: {
