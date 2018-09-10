@@ -4,7 +4,7 @@ import ToolbarButton from "./ToolbarButton"
 import Button from "@material-ui/core/Button"
 
 describe("editor/toolbar/ToolbarButton", () => {
-  const wrapper = mount(<ToolbarButton />)
+  const wrapper = mount(<ToolbarButton>test</ToolbarButton>)
 
   describe("initial render", () => {
     it("always renders an Button", () => {
