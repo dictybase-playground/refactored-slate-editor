@@ -6,6 +6,7 @@ import { withStyles } from "@material-ui/core/styles"
 
 import { BoldButton } from "editor/plugins/bold"
 import { ItalicButton } from "editor/plugins/italic"
+import { UnderlineButton } from "editor/plugins/underline"
 
 const styles = theme => ({
   toolbar: {
@@ -25,6 +26,7 @@ const EditorToolbar = props => {
         <Typography variant="title" color="inherit">
           <BoldButton {...props} />
           <ItalicButton {...props} />
+          <UnderlineButton {...props} />
         </Typography>
       </Toolbar>
     </AppBar>
