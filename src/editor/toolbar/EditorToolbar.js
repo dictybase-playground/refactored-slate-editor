@@ -10,6 +10,12 @@ import { ItalicButton } from "editor/plugins/italic"
 import { StrikethroughButton } from "editor/plugins/strikethrough"
 import { UnderlineButton } from "editor/plugins/underline"
 
+import {
+  AlignmentLeftButton,
+  AlignmentCenterButton,
+  AlignmentRightButton,
+} from "editor/plugins/alignment"
+
 const styles = theme => ({
   toolbar: {
     // padding: "20px",
@@ -30,6 +36,10 @@ const EditorToolbar = props => {
           <ItalicButton {...props} />
           <UnderlineButton {...props} />
           <StrikethroughButton {...props} />
+          &nbsp;
+          <AlignmentLeftButton {...props} />
+          <AlignmentCenterButton {...props} />
+          <AlignmentRightButton {...props} />
         </Typography>
       </Toolbar>
     </AppBar>
