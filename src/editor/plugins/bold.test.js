@@ -1,11 +1,17 @@
 import React from "react"
-import { mount } from "enzyme"
+import { shallow } from "enzyme"
 import { BoldButton, BoldPlugin, BoldMark } from "./bold"
 
 describe("editor/plugins/bold", () => {
   describe("BoldMark", () => {
+    const wrapper = shallow(<BoldMark>test</BoldMark>)
+
     it("should make text bold", () => {
-      // test that props.children is bold
+      expect(wrapper.find("strong").length).toBe(1)
+    })
+
+    it("should render correct children", () => {
+      expect(wrapper.props().children).toBe("test")
     })
   })
 
