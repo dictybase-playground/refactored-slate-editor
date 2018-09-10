@@ -13,11 +13,17 @@ import { UnderlineMark } from "./plugins/underline"
 
 /** Import node renderers */
 import { AlignmentNode } from "./plugins/alignment"
+import {
+  ListItemNode,
+  OrderedListNode,
+  UnorderedListNode,
+} from "./plugins/list"
 
 /** Import custom plugins */
 import { AlignmentPlugin } from "./plugins/alignment"
 import { BoldPlugin } from "./plugins/bold"
 import { ItalicPlugin } from "./plugins/italic"
+import { ListPlugin } from "./plugins/list"
 import { StrikethroughPlugin } from "./plugins/strikethrough"
 import { UnderlinePlugin } from "./plugins/underline"
 
@@ -30,6 +36,7 @@ const plugins = [
   AlignmentPlugin(),
   BoldPlugin(),
   ItalicPlugin(),
+  ListPlugin(),
   StrikethroughPlugin(),
   UnderlinePlugin(),
 ]
@@ -60,13 +67,19 @@ const renderMark = (props: Props) => {
  * Similar to renderMark above, except now we are working with nodes.
  */
 const renderNode = props => {
-  const { node } = props
+  const { node, attributes, children } = props
   switch (node.type) {
     case "alignment":
       return <AlignmentNode {...props} />
+    case "list-item":
+      return <ListItemNode {...props} />
+    case "unordered-list":
+      return <UnorderedListNode {...props} />
+    case "ordered-list":
+      return <OrderedListNode {...props} />
 
     default:
-      return null
+      return <p {...attributes}>{children}</p>
   }
 }
 

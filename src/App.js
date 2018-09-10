@@ -5,9 +5,7 @@ import PageEditor from "./editor/PageEditor"
 const App = () => (
   <Grid container justify="center">
     <Grid item xs={8}>
-      <center>
-        <PageEditor />
-      </center>
+      <PageEditor />
     </Grid>
   </Grid>
 )
