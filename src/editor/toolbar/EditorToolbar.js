@@ -4,8 +4,10 @@ import Toolbar from "@material-ui/core/Toolbar"
 import Typography from "@material-ui/core/Typography"
 import { withStyles } from "@material-ui/core/styles"
 
+/** import toolbar buttons */
 import { BoldButton } from "editor/plugins/bold"
 import { ItalicButton } from "editor/plugins/italic"
+import { StrikethroughButton } from "editor/plugins/strikethrough"
 import { UnderlineButton } from "editor/plugins/underline"
 
 const styles = theme => ({
@@ -27,6 +29,7 @@ const EditorToolbar = props => {
           <BoldButton {...props} />
           <ItalicButton {...props} />
           <UnderlineButton {...props} />
+          <StrikethroughButton {...props} />
         </Typography>
       </Toolbar>
     </AppBar>

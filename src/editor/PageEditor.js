@@ -5,17 +5,26 @@ import { Value } from "slate"
 import EditorToolbar from "./toolbar/EditorToolbar"
 import initialValue from "./data/initialValue.json"
 
+/** Import renderers */
 import { BoldMark } from "./plugins/bold"
 import { ItalicMark } from "./plugins/italic"
+import { StrikethroughMark } from "./plugins/strikethrough"
 import { UnderlineMark } from "./plugins/underline"
 
+/** Import custom plugins */
 import { BoldPlugin } from "./plugins/bold"
 import { ItalicPlugin } from "./plugins/italic"
+import { StrikethroughPlugin } from "./plugins/strikethrough"
 import { UnderlinePlugin } from "./plugins/underline"
 
 // all of the plugins that go into our editor
 // these are generally keyboard shortcuts
-const plugins = [BoldPlugin(), ItalicPlugin(), UnderlinePlugin()]
+const plugins = [
+  BoldPlugin(),
+  ItalicPlugin(),
+  StrikethroughPlugin(),
+  UnderlinePlugin(),
+]
 
 // necessary renderMark function that receives the mark type then renders the HTML
 // in our case, we are returning custom components
@@ -27,6 +36,8 @@ const renderMark = (props: Props) => {
       return <BoldMark {...props} />
     case "italic":
       return <ItalicMark {...props} />
+    case "strikethrough":
+      return <StrikethroughMark {...props} />
     case "underline":
       return <UnderlineMark {...props} />
 
