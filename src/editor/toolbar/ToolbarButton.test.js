@@ -14,5 +14,7 @@ describe("editor/toolbar/ToolbarButton", () => {
 
   describe("handleClick", () => {
     // what happens when user clicks button?
+    // wrapper.find(Button).simulate("click")
+    // wrapper.debug()
   })
 })

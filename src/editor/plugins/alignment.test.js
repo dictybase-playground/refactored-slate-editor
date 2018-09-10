@@ -19,7 +19,7 @@ describe("editor/plugins/alignment", () => {
   //   }
   //   const wrapper = shallow(<AlignmentNode {...props}>test</AlignmentNode>)
 
-  //   it("should make render a div", () => {
+  //   it("should render a div", () => {
   //     expect(wrapper.find("div").length).toBe(1)
   //   })
 

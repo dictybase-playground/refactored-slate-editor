@@ -16,7 +16,7 @@ describe("editor/plugins/list", () => {
     const props = {}
     const wrapper = shallow(<OrderedListNode {...props}>test</OrderedListNode>)
 
-    it("should make render a div", () => {
+    it("should render an ol", () => {
       expect(wrapper.find("ol").length).toBe(1)
     })
 

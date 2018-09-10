@@ -19,7 +19,12 @@ describe("editor/PageEditor", () => {
 
   describe("renderMark", () => {
     // write test for renderMark
-    // should display BoldMark when props.mark.type is "bold"
+    // should display BoldMark when props.mark.type is "bold", etc.
+  })
+
+  describe("renderNode", () => {
+    // write test for renderNode
+    // should display AlignmentNode when props.node.type is "alignment", etc.
   })
 
   describe("onChange method", () => {
