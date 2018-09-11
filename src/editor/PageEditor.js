@@ -22,6 +22,7 @@ import {
   OrderedListNode,
   UnorderedListNode,
 } from "./plugins/list"
+import { VideoNode } from "./plugins/video"
 
 /** Import custom plugins */
 import { AlignmentPlugin } from "./plugins/alignment"
@@ -33,6 +34,7 @@ import { LinkPlugin } from "./plugins/link"
 import { ListPlugin } from "./plugins/list"
 import { StrikethroughPlugin } from "./plugins/strikethrough"
 import { UnderlinePlugin } from "./plugins/underline"
+import { VideoPlugin } from "./plugins/video"
 
 /**
  * All of the plugins that go into our editor
@@ -49,6 +51,7 @@ const plugins = [
   ListPlugin(),
   StrikethroughPlugin(),
   UnderlinePlugin(),
+  VideoPlugin(),
 ]
 
 /**
@@ -99,6 +102,8 @@ export const renderNode = props => {
       return <UnorderedListNode {...props} />
     case "ordered-list":
       return <OrderedListNode {...props} />
+    case "video":
+      return <VideoNode {...props} />
 
     default:
       return <p {...attributes}>{children}</p>

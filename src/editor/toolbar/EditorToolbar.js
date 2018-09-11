@@ -20,6 +20,7 @@ import { H1Button, H2Button, H3Button } from "editor/plugins/heading"
 import { ImageButton } from "editor/plugins/image"
 import { LinkButton } from "editor/plugins/link"
 import { OrderedListButton, UnorderedListButton } from "editor/plugins/list"
+import { VideoButton } from "editor/plugins/video"
 
 const styles = theme => ({
   toolbar: {
@@ -51,6 +52,7 @@ const EditorToolbar = props => {
           <H3Button {...props} />
           <LinkButton {...props} />
           <ImageButton {...props} />
+          <VideoButton {...props} />
           <FontFamilyDropdown {...props} />
         </Typography>
       </Toolbar>

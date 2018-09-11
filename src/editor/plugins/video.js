@@ -1,0 +1,136 @@
+import React from "react"
+import { withStyles } from "@material-ui/core/styles"
+import Tooltip from "@material-ui/core/Tooltip"
+import VideoIcon from "@material-ui/icons/Videocam"
+import getVideoId from "get-video-id"
+
+import ToolbarButton from "editor/toolbar/ToolbarButton"
+import { isMod } from "editor/utils/isMod"
+
+/**
+ * Material-UI styling
+ */
+const styles = theme => ({
+  wrapper: {
+    position: "relative",
+    paddingBottom: "50.66%",
+    paddingTop: "25px",
+    height: "0",
+    outline: "2px solid #0017ff",
+  },
+  mask: {
+    display: "none",
+    position: "absolute",
+    top: "0px",
+    left: "0px",
+    right: "0px",
+    bottom: "0px",
+    height: "100%",
+    zIndex: 1,
+  },
+  iframe: {
+    position: "absolute",
+    top: "0px",
+    left: "0px",
+    width: "100%",
+    height: "100%",
+  },
+})
+
+/**
+ * Functions to set the video blocks.
+ */
+const insertVideo = (change, url) => {
+  const videoId = getVideoId(url).id
+  let src
+  if (url.match(/youtube\.com/)) {
+    src = `https://www.youtube.com/embed/${videoId}`
+  } else if (url.match(/vimeo\.com/)) {
+    src = `https://player.vimeo.com/video/${videoId}`
+  } else {
+    alert("Can only accept YouTube or Vimeo URL.")
+    return
+  }
+
+  change.insertBlock({
+    type: "video",
+    isVoid: true,
+    data: { src, url },
+  })
+}
+
+const insertVideoStrategy = change => {
+  const { value } = change
+  const src = window.prompt("Enter the URL of the video (YouTube or Vimeo).")
+  if (!src) return
+
+  return value.change().call(insertVideo, src)
+}
+
+/**
+ * Rendering components that provide the actual HTML to use inside the editor.
+ */
+const Video = ({ children, attributes, node: { data }, classes }) => {
+  const src = data.get("src")
+
+  return (
+    <div>
+      <div {...attributes} className={classes.wrapper}>
+        <div className={classes.mask} />
+        <iframe
+          title="video-embed"
+          id="ytplayer"
+          type="text/html"
+          width="580"
+          height="390"
+          src={src}
+          frameBorder="0"
+          className={classes.iframe}
+        />
+      </div>
+    </div>
+  )
+}
+
+const VideoNode = withStyles(styles)(Video)
+
+/**
+ * Button components that use click handlers to connect to the editor.
+ */
+const VideoButton = ({ value, onChange }) => {
+  const handleClick = e => {
+    onChange(insertVideoStrategy(value.change()))
+  }
+
+  return (
+    <Tooltip title="video" placement="bottom">
+      <ToolbarButton onClick={handleClick}>
+        <VideoIcon />
+      </ToolbarButton>
+    </Tooltip>
+  )
+}
+
+/**
+ * Function that specifies the keyboard shortcuts to use for videos.
+ * It accepts event and change as arguments.
+ */
+const VideoKeyboardShortcut = (event, change) => {
+  if (isMod(event) && event.key === "m") return insertVideoStrategy(change)
+  return
+}
+
+/**
+ * Function that represents our actual plugin.
+ * It takes options in case we want to add more to it in the future.
+ */
+const VideoPlugin = options => ({
+  onKeyDown(...args) {
+    return VideoKeyboardShortcut(...args)
+  },
+})
+
+/**
+ * Export everything needed for the editor.
+ */
+export { VideoNode, VideoButton, VideoPlugin }
