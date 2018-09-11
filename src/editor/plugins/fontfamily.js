@@ -1,4 +1,23 @@
 import React from "react"
+import { withStyles } from "@material-ui/core/styles"
+import InputLabel from "@material-ui/core/InputLabel"
+import MenuItem from "@material-ui/core/MenuItem"
+import FormControl from "@material-ui/core/FormControl"
+import Select from "@material-ui/core/Select"
+
+/**
+ * Material-UI styling for dropdown
+ */
+const styles = theme => ({
+  root: {
+    display: "flex",
+    flexWrap: "wrap",
+  },
+  formControl: {
+    margin: theme.spacing.unit,
+    minWidth: 150,
+  },
+})
 
 /**
  * List of fonts available
@@ -39,7 +58,8 @@ const fontFamilyMarkStrategy = attributes => {
     if (value.isExpanded) {
       return applyMark({ change: value.change(), fontFamilyIndex })
     }
-    console.log("nada")
+    // why is handleChange always hitting here?
+    // need to fix this
     return applyMark({ change: value.change(), fontFamilyIndex })
   }
 
@@ -59,21 +79,28 @@ const FontFamilyMark = ({ children, mark: { data } }) => (
 /**
  * Dropdown component that connects to the editor.
  */
-const FontFamilyDropdown = ({ value, onChange }) => {
+const Dropdown = ({ value, onChange, classes }) => {
   const handleChange = ({ target: { value: fontFamilyIndex } }) => {
     onChange(fontFamilyMarkStrategy({ value, fontFamilyIndex }))
   }
 
   return (
-    <select onChange={handleChange}>
-      {FontFamilyList.map((font, index) => (
-        <option key={`font-family-${index}`} value={index}>
-          {font.name}
-        </option>
-      ))}
-    </select>
+    <form className={classes.root}>
+      <FormControl className={classes.formControl}>
+        <InputLabel>Font Family</InputLabel>
+        <Select value="font-family" onChange={handleChange}>
+          {FontFamilyList.map((font, index) => (
+            <MenuItem key={`font-family-${index}`} value={index}>
+              {font.name}
+            </MenuItem>
+          ))}
+        </Select>
+      </FormControl>
+    </form>
   )
 }
+
+const FontFamilyDropdown = withStyles(styles)(Dropdown)
 
 /**
  * Export everything needed for the editor.
