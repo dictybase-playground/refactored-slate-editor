@@ -15,6 +15,7 @@ import { UnderlineMark } from "./plugins/underline"
 /** Import node renderers */
 import { AlignmentNode } from "./plugins/alignment"
 import { H1Node, H2Node, H3Node } from "./plugins/heading"
+import { ImageNode } from "./plugins/image"
 import { LinkNode } from "./plugins/link"
 import {
   ListItemNode,
@@ -86,6 +87,8 @@ export const renderNode = props => {
       return <H2Node {...props} />
     case "h3":
       return <H3Node {...props} />
+    case "image":
+      return <ImageNode {...props} />
     case "link":
       return <LinkNode {...props} />
     case "list-item":
