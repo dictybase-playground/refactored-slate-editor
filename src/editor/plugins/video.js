@@ -18,16 +18,6 @@ const styles = theme => ({
     height: "0",
     outline: "2px solid #0017ff",
   },
-  mask: {
-    display: "none",
-    position: "absolute",
-    top: "0px",
-    left: "0px",
-    right: "0px",
-    bottom: "0px",
-    height: "100%",
-    zIndex: 1,
-  },
   iframe: {
     position: "absolute",
     top: "0px",
@@ -74,20 +64,17 @@ const Video = ({ children, attributes, node: { data }, classes }) => {
   const src = data.get("src")
 
   return (
-    <div>
-      <div {...attributes} className={classes.wrapper}>
-        <div className={classes.mask} />
-        <iframe
-          title="video-embed"
-          id="ytplayer"
-          type="text/html"
-          width="580"
-          height="390"
-          src={src}
-          frameBorder="0"
-          className={classes.iframe}
-        />
-      </div>
+    <div {...attributes} className={classes.wrapper}>
+      <iframe
+        title="video-embed"
+        id="ytplayer"
+        type="text/html"
+        width="580"
+        height="390"
+        src={src}
+        frameBorder="0"
+        className={classes.iframe}
+      />
     </div>
   )
 }
