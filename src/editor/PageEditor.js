@@ -45,7 +45,7 @@ const plugins = [
  * Necessary renderMark function that receives the mark type then renders the HTML
  * In our case, we are returning custom components
  */
-const renderMark = (props: Props) => {
+export const renderMark = (props: Props) => {
   const { mark } = props
 
   switch (mark.type) {
@@ -66,7 +66,7 @@ const renderMark = (props: Props) => {
 /**
  * Similar to renderMark above, except now we are working with nodes.
  */
-const renderNode = props => {
+export const renderNode = props => {
   const { node, attributes, children } = props
   switch (node.type) {
     case "alignment":
