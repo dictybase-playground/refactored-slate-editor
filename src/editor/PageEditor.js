@@ -7,6 +7,7 @@ import initialValue from "./data/initialValue.json"
 
 /** Import mark renderers */
 import { BoldMark } from "./plugins/bold"
+import { FontFamilyMark } from "./plugins/fontfamily"
 import { ItalicMark } from "./plugins/italic"
 import { StrikethroughMark } from "./plugins/strikethrough"
 import { UnderlineMark } from "./plugins/underline"
@@ -57,6 +58,8 @@ export const renderMark = (props: Props) => {
   switch (mark.type) {
     case "bold":
       return <BoldMark {...props} />
+    case "font-family":
+      return <FontFamilyMark {...props} />
     case "italic":
       return <ItalicMark {...props} />
     case "strikethrough":

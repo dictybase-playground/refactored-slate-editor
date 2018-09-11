@@ -15,6 +15,7 @@ import {
   AlignmentCenterButton,
   AlignmentRightButton,
 } from "editor/plugins/alignment"
+import { FontFamilyDropdown } from "editor/plugins/fontfamily"
 import { H1Button, H2Button, H3Button } from "editor/plugins/heading"
 import { LinkButton } from "editor/plugins/link"
 import { OrderedListButton, UnorderedListButton } from "editor/plugins/list"
@@ -48,6 +49,7 @@ const EditorToolbar = props => {
           <H2Button {...props} />
           <H3Button {...props} />
           <LinkButton {...props} />
+          <FontFamilyDropdown {...props} />
         </Typography>
       </Toolbar>
     </AppBar>

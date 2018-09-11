@@ -10,7 +10,8 @@
     "react-dom": "^16.5.0",
     "react-scripts": "1.1.5",
     "slate": "^0.40.2",
-    "slate-react": "^0.18.5"
+    "slate-react": "^0.18.5",
+    "typeface-roboto": "0.0.54"
   },
   "scripts": {
     "prettier": "prettier --version",
