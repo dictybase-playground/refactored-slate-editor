@@ -26,12 +26,13 @@ import {
 /** Import custom plugins */
 import { AlignmentPlugin } from "./plugins/alignment"
 import { BoldPlugin } from "./plugins/bold"
+import { HeadingPlugin } from "editor/plugins/heading"
+import { ImagePlugin } from "./plugins/image"
 import { ItalicPlugin } from "./plugins/italic"
 import { LinkPlugin } from "./plugins/link"
 import { ListPlugin } from "./plugins/list"
 import { StrikethroughPlugin } from "./plugins/strikethrough"
 import { UnderlinePlugin } from "./plugins/underline"
-import { HeadingPlugin } from "editor/plugins/heading"
 
 /**
  * All of the plugins that go into our editor
@@ -42,6 +43,7 @@ const plugins = [
   AlignmentPlugin(),
   BoldPlugin(),
   HeadingPlugin(),
+  ImagePlugin(),
   ItalicPlugin(),
   LinkPlugin(),
   ListPlugin(),
