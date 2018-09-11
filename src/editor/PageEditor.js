@@ -13,17 +13,19 @@ import { UnderlineMark } from "./plugins/underline"
 
 /** Import node renderers */
 import { AlignmentNode } from "./plugins/alignment"
+import { H1Node, H2Node, H3Node } from "./plugins/heading"
+import { LinkNode } from "./plugins/link"
 import {
   ListItemNode,
   OrderedListNode,
   UnorderedListNode,
 } from "./plugins/list"
-import { H1Node, H2Node, H3Node } from "editor/plugins/heading"
 
 /** Import custom plugins */
 import { AlignmentPlugin } from "./plugins/alignment"
 import { BoldPlugin } from "./plugins/bold"
 import { ItalicPlugin } from "./plugins/italic"
+import { LinkPlugin } from "./plugins/link"
 import { ListPlugin } from "./plugins/list"
 import { StrikethroughPlugin } from "./plugins/strikethrough"
 import { UnderlinePlugin } from "./plugins/underline"
@@ -39,6 +41,7 @@ const plugins = [
   BoldPlugin(),
   HeadingPlugin(),
   ItalicPlugin(),
+  LinkPlugin(),
   ListPlugin(),
   StrikethroughPlugin(),
   UnderlinePlugin(),
@@ -80,6 +83,8 @@ export const renderNode = props => {
       return <H2Node {...props} />
     case "h3":
       return <H3Node {...props} />
+    case "link":
+      return <LinkNode {...props} />
     case "list-item":
       return <ListItemNode {...props} />
     case "unordered-list":
