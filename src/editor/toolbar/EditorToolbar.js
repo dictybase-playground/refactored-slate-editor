@@ -15,6 +15,7 @@ import {
   AlignmentCenterButton,
   AlignmentRightButton,
 } from "editor/plugins/alignment"
+import { H1Button, H2Button, H3Button } from "editor/plugins/heading"
 import { OrderedListButton, UnorderedListButton } from "editor/plugins/list"
 
 const styles = theme => ({
@@ -42,6 +43,9 @@ const EditorToolbar = props => {
           <AlignmentRightButton {...props} />
           <UnorderedListButton {...props} />
           <OrderedListButton {...props} />
+          <H1Button {...props} />
+          <H2Button {...props} />
+          <H3Button {...props} />
         </Typography>
       </Toolbar>
     </AppBar>

@@ -18,6 +18,7 @@ import {
   OrderedListNode,
   UnorderedListNode,
 } from "./plugins/list"
+import { H1Node, H2Node, H3Node } from "editor/plugins/heading"
 
 /** Import custom plugins */
 import { AlignmentPlugin } from "./plugins/alignment"
@@ -26,6 +27,7 @@ import { ItalicPlugin } from "./plugins/italic"
 import { ListPlugin } from "./plugins/list"
 import { StrikethroughPlugin } from "./plugins/strikethrough"
 import { UnderlinePlugin } from "./plugins/underline"
+import { HeadingPlugin } from "editor/plugins/heading"
 
 /**
  * All of the plugins that go into our editor
@@ -35,6 +37,7 @@ import { UnderlinePlugin } from "./plugins/underline"
 const plugins = [
   AlignmentPlugin(),
   BoldPlugin(),
+  HeadingPlugin(),
   ItalicPlugin(),
   ListPlugin(),
   StrikethroughPlugin(),
@@ -71,6 +74,12 @@ export const renderNode = props => {
   switch (node.type) {
     case "alignment":
       return <AlignmentNode {...props} />
+    case "h1":
+      return <H1Node {...props} />
+    case "h2":
+      return <H2Node {...props} />
+    case "h3":
+      return <H3Node {...props} />
     case "list-item":
       return <ListItemNode {...props} />
     case "unordered-list":
