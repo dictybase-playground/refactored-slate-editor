@@ -1,9 +1,10 @@
 import React from "react"
-import { Editor } from "slate-react"
+import { Editor, getEventTransfer } from "slate-react"
 import { Value } from "slate"
 
 import EditorToolbar from "./toolbar/EditorToolbar"
 import initialValue from "./data/initialValue.json"
+import { onPasteHtml, onPasteText } from "./utils/utils"
 
 /** Import mark renderers */
 import { BoldMark } from "./plugins/bold"
@@ -125,6 +126,19 @@ class PageEditor extends React.Component {
     this.setState({ value })
   }
 
+  onPaste = (e, change) => {
+    const transfer = getEventTransfer(e)
+    const { type } = transfer
+    switch (type) {
+      case "text":
+        return onPasteText(e, change)
+      case "html":
+        return onPasteHtml(e, change)
+      default:
+        break
+    }
+  }
+
   render() {
     const { value } = this.state
 
@@ -135,6 +149,7 @@ class PageEditor extends React.Component {
         <Editor
           value={value}
           onChange={this.onChange}
+          onPaste={this.onPaste}
           renderMark={renderMark}
           renderNode={renderNode}
           plugins={plugins}

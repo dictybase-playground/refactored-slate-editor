@@ -17,6 +17,26 @@ const wrapLink = (change, href) => {
   change.moveToEnd()
 }
 
+const insertLink = (change, url) => {
+  if (change.value.isCollapsed) {
+    change
+      .insertText(url)
+      .moveFocusForward(0 - url.length)
+      .wrapInline({
+        type: "link",
+        data: { url },
+      })
+      .moveToEnd()
+  } else {
+    change.wrapInline({
+      type: "link",
+      data: { url },
+    })
+
+    change.moveToEnd()
+  }
+}
+
 const hasLinks = value => value.inlines.some(inline => inline.type === "link")
 
 const insertLinkStrategy = change => {
@@ -94,4 +114,4 @@ const LinkPlugin = options => ({
 /**
  * Export everything needed for the editor.
  */
-export { LinkNode, LinkButton, LinkPlugin }
+export { LinkNode, LinkButton, LinkPlugin, insertLink }

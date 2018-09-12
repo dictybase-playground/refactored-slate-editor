@@ -71,4 +71,4 @@ const ImagePlugin = options => ({
 /**
  * Export everything needed for the editor.
  */
-export { ImageNode, ImageButton, ImagePlugin }
+export { ImageNode, ImageButton, ImagePlugin, insertImage }

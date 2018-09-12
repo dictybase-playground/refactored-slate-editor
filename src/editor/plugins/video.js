@@ -118,4 +118,4 @@ const VideoPlugin = options => ({
 /**
  * Export everything needed for the editor.
  */
-export { VideoNode, VideoButton, VideoPlugin }
+export { VideoNode, VideoButton, VideoPlugin, insertVideo }
