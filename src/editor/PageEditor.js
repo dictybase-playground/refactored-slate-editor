@@ -15,6 +15,7 @@ import { UnderlineMark } from "./plugins/underline"
 
 /** Import node renderers */
 import { AlignmentNode } from "./plugins/alignment"
+import { DividerNode } from "./plugins/divider"
 import { H1Node, H2Node, H3Node } from "./plugins/heading"
 import { ImageNode } from "./plugins/image"
 import { LinkNode } from "./plugins/link"
@@ -28,6 +29,7 @@ import { VideoNode } from "./plugins/video"
 /** Import custom plugins */
 import { AlignmentPlugin } from "./plugins/alignment"
 import { BoldPlugin } from "./plugins/bold"
+import { DividerPlugin } from "./plugins/divider"
 import { HeadingPlugin } from "editor/plugins/heading"
 import { ImagePlugin } from "./plugins/image"
 import { ItalicPlugin } from "./plugins/italic"
@@ -45,6 +47,7 @@ import { VideoPlugin } from "./plugins/video"
 const plugins = [
   AlignmentPlugin(),
   BoldPlugin(),
+  DividerPlugin(),
   HeadingPlugin(),
   ImagePlugin(),
   ItalicPlugin(),
@@ -87,6 +90,8 @@ export const renderNode = props => {
   switch (node.type) {
     case "alignment":
       return <AlignmentNode {...props} />
+    case "divider":
+      return <DividerNode {...props} />
     case "h1":
       return <H1Node {...props} />
     case "h2":

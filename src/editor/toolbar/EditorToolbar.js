@@ -15,6 +15,7 @@ import {
   AlignmentCenterButton,
   AlignmentRightButton,
 } from "editor/plugins/alignment"
+import { DividerButton } from "editor/plugins/divider"
 import { FontFamilyDropdown } from "editor/plugins/fontfamily"
 import { H1Button, H2Button, H3Button } from "editor/plugins/heading"
 import { ImageButton } from "editor/plugins/image"
@@ -53,6 +54,7 @@ const EditorToolbar = props => {
           <LinkButton {...props} />
           <ImageButton {...props} />
           <VideoButton {...props} />
+          <DividerButton {...props} />
           <FontFamilyDropdown {...props} />
         </Typography>
       </Toolbar>
