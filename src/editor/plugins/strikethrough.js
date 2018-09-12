@@ -3,7 +3,7 @@ import Tooltip from "@material-ui/core/Tooltip"
 import FormatStrikethroughIcon from "@material-ui/icons/FormatStrikethrough"
 
 import ToolbarButton from "editor/toolbar/ToolbarButton"
-import { isMod } from "editor/utils/isMod"
+import { isMod } from "editor/utils/utils"
 
 /**
  * Function that toggles the mark type.

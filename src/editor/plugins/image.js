@@ -3,7 +3,7 @@ import Tooltip from "@material-ui/core/Tooltip"
 import ImageIcon from "@material-ui/icons/Image"
 
 import ToolbarButton from "editor/toolbar/ToolbarButton"
-import { isMod } from "editor/utils/isMod"
+import { isMod } from "editor/utils/utils"
 
 /**
  * Functions to set the image blocks.

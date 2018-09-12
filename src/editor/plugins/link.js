@@ -3,7 +3,7 @@ import Tooltip from "@material-ui/core/Tooltip"
 import LinkIcon from "@material-ui/icons/Link"
 
 import ToolbarButton from "editor/toolbar/ToolbarButton"
-import { isMod } from "editor/utils/isMod"
+import { isMod } from "editor/utils/utils"
 
 /**
  * Functions to set the link blocks.

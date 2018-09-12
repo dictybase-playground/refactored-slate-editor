@@ -1,4 +1,4 @@
-import { isFunction } from "./isFunction"
+import { isFunction } from "./utils"
 
 describe("editor/utils/isFunction", () => {
   const realFunction = () => {}

@@ -5,7 +5,7 @@ import VideoIcon from "@material-ui/icons/Videocam"
 import getVideoId from "get-video-id"
 
 import ToolbarButton from "editor/toolbar/ToolbarButton"
-import { isMod } from "editor/utils/isMod"
+import { isMod } from "editor/utils/utils"
 
 /**
  * Material-UI styling
