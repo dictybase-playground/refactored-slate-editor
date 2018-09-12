@@ -31,8 +31,7 @@ const insertImageStrategy = change => {
 /**
  * Rendering components that provide the actual HTML to use inside the editor.
  */
-const ImageNode = ({ children, attributes, node }) => {
-  const { data } = node
+const ImageNode = ({ attributes, node: { data } }) => {
   const src = data.get("src")
   return <img src={src} {...attributes} alt="" />
 }
