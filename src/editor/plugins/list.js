@@ -3,7 +3,7 @@ import Tooltip from "@material-ui/core/Tooltip"
 import FormatListBulletedIcon from "@material-ui/icons/FormatListBulleted"
 import FormatListNumberedIcon from "@material-ui/icons/FormatListNumbered"
 
-import ToolbarButton from "editor/toolbar/ToolbarButton"
+import ToolbarButton from "../toolbar/ToolbarButton"
 
 /**
  * Functions to set the list blocks.

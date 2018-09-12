@@ -2,8 +2,8 @@ import React from "react"
 import Tooltip from "@material-ui/core/Tooltip"
 import FormatItalicIcon from "@material-ui/icons/FormatItalic"
 
-import ToolbarButton from "editor/toolbar/ToolbarButton"
-import { isMod } from "editor/utils/utils"
+import ToolbarButton from "../toolbar/ToolbarButton"
+import { isMod } from "../utils/utils"
 
 /**
  * Function that toggles the mark type.

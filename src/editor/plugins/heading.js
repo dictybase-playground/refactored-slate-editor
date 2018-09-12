@@ -1,7 +1,7 @@
 import React from "react"
 import Tooltip from "@material-ui/core/Tooltip"
 
-import ToolbarButton from "editor/toolbar/ToolbarButton"
+import ToolbarButton from "../toolbar/ToolbarButton"
 
 /**
  * Functions to set the heading blocks.

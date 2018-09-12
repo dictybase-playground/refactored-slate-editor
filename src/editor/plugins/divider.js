@@ -1,8 +1,8 @@
 import React from "react"
 import Tooltip from "@material-ui/core/Tooltip"
 
-import ToolbarButton from "editor/toolbar/ToolbarButton"
-import { isMod } from "editor/utils/utils"
+import ToolbarButton from "../toolbar/ToolbarButton"
+import { isMod } from "../utils/utils"
 
 /**
  * Functions to set the link blocks.

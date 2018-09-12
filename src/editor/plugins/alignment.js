@@ -4,7 +4,7 @@ import FormatAlignLeftIcon from "@material-ui/icons/FormatAlignLeft"
 import FormatAlignCenterIcon from "@material-ui/icons/FormatAlignCenter"
 import FormatAlignRightIcon from "@material-ui/icons/FormatAlignRight"
 
-import ToolbarButton from "editor/toolbar/ToolbarButton"
+import ToolbarButton from "../toolbar/ToolbarButton"
 
 /**
  * Functions to set the alignment blocks.

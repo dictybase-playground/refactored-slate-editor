@@ -5,23 +5,23 @@ import Typography from "@material-ui/core/Typography"
 import { withStyles } from "@material-ui/core/styles"
 
 /** import toolbar buttons */
-import { BoldButton } from "editor/plugins/bold"
-import { ItalicButton } from "editor/plugins/italic"
-import { StrikethroughButton } from "editor/plugins/strikethrough"
-import { UnderlineButton } from "editor/plugins/underline"
+import { BoldButton } from "../plugins/bold"
+import { ItalicButton } from "../plugins/italic"
+import { StrikethroughButton } from "../plugins/strikethrough"
+import { UnderlineButton } from "../plugins/underline"
 
 import {
   AlignmentLeftButton,
   AlignmentCenterButton,
   AlignmentRightButton,
-} from "editor/plugins/alignment"
-import { DividerButton } from "editor/plugins/divider"
-import { FontFamilyDropdown } from "editor/plugins/fontfamily"
-import { H1Button, H2Button, H3Button } from "editor/plugins/heading"
-import { ImageButton } from "editor/plugins/image"
-import { LinkButton } from "editor/plugins/link"
-import { OrderedListButton, UnorderedListButton } from "editor/plugins/list"
-import { VideoButton } from "editor/plugins/video"
+} from "../plugins/alignment"
+import { DividerButton } from "../plugins/divider"
+import { FontFamilyDropdown } from "../plugins/fontfamily"
+import { H1Button, H2Button, H3Button } from "../plugins/heading"
+import { ImageButton } from "../plugins/image"
+import { LinkButton } from "../plugins/link"
+import { OrderedListButton, UnorderedListButton } from "../plugins/list"
+import { VideoButton } from "../plugins/video"
 
 const styles = theme => ({
   toolbar: {
