@@ -23,3 +23,17 @@ _/editor/toolbar_ - everything related to the toolbar
 - at minimum, this has the `EditorToolbar` component and generic `ToolbarButton` component
 
 _/editor/utils_ - any type of helper functions specific to the editor
+
+## Transferring Editor
+
+If you want to transfer this editor to another application, you can copy the `/editor` folder directly. The `PageEditor` component will be your entry point into your new application. Example:
+
+```
+const App = () => (
+  <div>
+    <PageEditor />
+  </div>
+)
+```
+
+In this demo state, the editor is set to get its initial value from a placeholder JSON file (`/editor/data/initialValue.json`). In order to use this with Redux, you will need to add in the necessary code to do so.
