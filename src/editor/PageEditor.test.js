@@ -5,15 +5,20 @@ import { Editor } from "slate-react"
 import PageEditor, { renderMark, renderNode } from "./PageEditor"
 import EditorToolbar from "./toolbar/EditorToolbar"
 import { BoldMark } from "./plugins/bold"
+import { FontFamilyMark } from "./plugins/fontfamily"
 import { ItalicMark } from "./plugins/italic"
 import { StrikethroughMark } from "./plugins/strikethrough"
 import { UnderlineMark } from "./plugins/underline"
 import { AlignmentNode } from "./plugins/alignment"
+import { H1Node, H2Node, H3Node } from "./plugins/heading"
+import { ImageNode } from "./plugins/image"
+import { LinkNode } from "./plugins/link"
 import {
   ListItemNode,
   OrderedListNode,
   UnorderedListNode,
 } from "./plugins/list"
+import { VideoNode } from "./plugins/video"
 
 describe("editor/PageEditor", () => {
   describe("initial render", () => {
@@ -62,6 +67,15 @@ describe("editor/PageEditor", () => {
         },
       }
       expect(renderMark(props)).toEqual(<StrikethroughMark {...props} />)
+    })
+
+    it("should return FontFamilyMark when type is font-family", () => {
+      const props = {
+        mark: {
+          type: "font-family",
+        },
+      }
+      expect(renderMark(props)).toEqual(<FontFamilyMark {...props} />)
     })
 
     it("should return null when type is something else", () => {
@@ -113,6 +127,66 @@ describe("editor/PageEditor", () => {
       }
 
       expect(renderNode(props)).toEqual(<UnorderedListNode {...props} />)
+    })
+
+    it("should return H1Node when type is alignment", () => {
+      const props = {
+        node: {
+          type: "h1",
+        },
+      }
+
+      expect(renderNode(props)).toEqual(<H1Node {...props} />)
+    })
+
+    it("should return H2Node when type is alignment", () => {
+      const props = {
+        node: {
+          type: "h2",
+        },
+      }
+
+      expect(renderNode(props)).toEqual(<H2Node {...props} />)
+    })
+
+    it("should return H3Node when type is alignment", () => {
+      const props = {
+        node: {
+          type: "h3",
+        },
+      }
+
+      expect(renderNode(props)).toEqual(<H3Node {...props} />)
+    })
+
+    it("should return ImageNode when type is alignment", () => {
+      const props = {
+        node: {
+          type: "image",
+        },
+      }
+
+      expect(renderNode(props)).toEqual(<ImageNode {...props} />)
+    })
+
+    it("should return LinkNode when type is alignment", () => {
+      const props = {
+        node: {
+          type: "link",
+        },
+      }
+
+      expect(renderNode(props)).toEqual(<LinkNode {...props} />)
+    })
+
+    it("should return VideoNode when type is alignment", () => {
+      const props = {
+        node: {
+          type: "video",
+        },
+      }
+
+      expect(renderNode(props)).toEqual(<VideoNode {...props} />)
     })
 
     it("should return a paragraph if something else", () => {
