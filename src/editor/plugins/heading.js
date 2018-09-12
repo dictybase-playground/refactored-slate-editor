@@ -27,47 +27,41 @@ const H3Node = ({ attributes, children }) => <h3 {...attributes}>{children}</h3>
 /**
  * Button components that use click handlers to connect the buttons to the editor.
  */
-const H1Button = ({ value, onChange }) => {
-  const handleClick = e => {
-    onChange(headingH1(value.change()))
-  }
+const H1Button = ({ value, onChange }) => (
+  <Tooltip title="⌘ + shift + 1" placement="bottom">
+    <ToolbarButton
+      // eslint-disable-next-line
+      onClick={e => {
+        onChange(headingH1(value.change()))
+      }}>
+      <strong>H1</strong>
+    </ToolbarButton>
+  </Tooltip>
+)
 
-  return (
-    <Tooltip title="⌘ + shift + 1" placement="bottom">
-      <ToolbarButton onClick={handleClick}>
-        <strong>H1</strong>
-      </ToolbarButton>
-    </Tooltip>
-  )
-}
+const H2Button = ({ value, onChange }) => (
+  <Tooltip title="⌘ + shift + 2" placement="bottom">
+    <ToolbarButton
+      // eslint-disable-next-line
+      onClick={e => {
+        onChange(headingH2(value.change()))
+      }}>
+      <strong>H2</strong>
+    </ToolbarButton>
+  </Tooltip>
+)
 
-const H2Button = ({ value, onChange }) => {
-  const handleClick = e => {
-    onChange(headingH2(value.change()))
-  }
-
-  return (
-    <Tooltip title="⌘ + shift + 2" placement="bottom">
-      <ToolbarButton onClick={handleClick}>
-        <strong>H2</strong>
-      </ToolbarButton>
-    </Tooltip>
-  )
-}
-
-const H3Button = ({ value, onChange }) => {
-  const handleClick = e => {
-    onChange(headingH3(value.change()))
-  }
-
-  return (
-    <Tooltip title="⌘ + shift + 3" placement="bottom">
-      <ToolbarButton onClick={handleClick}>
-        <strong>H3</strong>
-      </ToolbarButton>
-    </Tooltip>
-  )
-}
+const H3Button = ({ value, onChange }) => (
+  <Tooltip title="⌘ + shift + 3" placement="bottom">
+    <ToolbarButton
+      // eslint-disable-next-line
+      onClick={e => {
+        onChange(headingH3(value.change()))
+      }}>
+      <strong>H3</strong>
+    </ToolbarButton>
+  </Tooltip>
+)
 
 /**
  * Function that specifies the keyboard shortcuts to use for headings.

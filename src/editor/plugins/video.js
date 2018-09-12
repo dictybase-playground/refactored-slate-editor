@@ -84,19 +84,17 @@ const VideoNode = withStyles(styles)(Video)
 /**
  * Button components that use click handlers to connect to the editor.
  */
-const VideoButton = ({ value, onChange }) => {
-  const handleClick = e => {
-    onChange(insertVideoStrategy(value.change()))
-  }
-
-  return (
-    <Tooltip title="video" placement="bottom">
-      <ToolbarButton onClick={handleClick}>
-        <VideoIcon />
-      </ToolbarButton>
-    </Tooltip>
-  )
-}
+const VideoButton = ({ value, onChange }) => (
+  <Tooltip title="video" placement="bottom">
+    <ToolbarButton
+      // eslint-disable-next-line
+      onClick={e => {
+        onChange(insertVideoStrategy(value.change()))
+      }}>
+      <VideoIcon />
+    </ToolbarButton>
+  </Tooltip>
+)
 
 /**
  * Function that specifies the keyboard shortcuts to use for videos.

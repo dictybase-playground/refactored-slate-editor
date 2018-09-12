@@ -18,19 +18,17 @@ const BoldMark = ({ children }) => <strong>{children}</strong>
 /**
  * Bold button that uses a click handler to connect the button to the editor.
  */
-const BoldButton = ({ value, onChange }) => {
-  const handleClick = e => {
-    onChange(boldMarkStrategy(value.change()))
-  }
-
-  return (
-    <Tooltip title="ctrl + b" placement="bottom">
-      <ToolbarButton onClick={handleClick}>
-        <FormatBoldIcon />
-      </ToolbarButton>
-    </Tooltip>
-  )
-}
+const BoldButton = ({ value, onChange }) => (
+  <Tooltip title="ctrl + b" placement="bottom">
+    <ToolbarButton
+      // eslint-disable-next-line
+      onClick={e => {
+        onChange(boldMarkStrategy(value.change()))
+      }}>
+      <FormatBoldIcon />
+    </ToolbarButton>
+  </Tooltip>
+)
 
 /**
  * Function that specifies the keyboard shortcut to use for bold.

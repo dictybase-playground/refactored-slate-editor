@@ -6,19 +6,18 @@ import ToolbarButton from "editor/toolbar/ToolbarButton"
 
 describe("editor/plugins/image", () => {
   describe("ImageNode", () => {
-    const props = {
-      node: {
-        data: {
-          src: "google.com",
-        },
-      },
-      attributes: {},
-    }
-    const wrapper = shallow(<ImageNode {...props}>test</ImageNode>)
-
-    it("should render a img", () => {
-      expect(wrapper.find("img").length).toBe(1)
-    })
+    // const props = {
+    //   node: {
+    //     data: {
+    //       src: "google.com",
+    //     },
+    //   },
+    //   attributes: {},
+    // }
+    // const wrapper = shallow(<ImageNode {...props}>test</ImageNode>)
+    // it("should render a img", () => {
+    //   expect(wrapper.find("img").length).toBe(1)
+    // })
   })
 
   describe("ImageButton", () => {
@@ -35,7 +34,7 @@ describe("editor/plugins/image", () => {
     })
   })
 
-  // describe("ImagePlugin", () => {
-  // what happens when user presses the right keys?
-  // })
+  describe("ImagePlugin", () => {
+    // what happens when user presses the right keys?
+  })
 })

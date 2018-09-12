@@ -37,21 +37,17 @@ const ImageNode = ({ attributes, node: { data } }) => {
 }
 
 /**
- * Button components that use click handlers to connect to the editor.
+ * Button component that uses a click handler to connect to the editor.
  */
-const ImageButton = ({ value, onChange }) => {
-  const handleClick = e => {
-    onChange(insertImageStrategy(value.change()))
-  }
-
-  return (
-    <Tooltip title="image" placement="bottom">
-      <ToolbarButton onClick={handleClick}>
-        <ImageIcon />
-      </ToolbarButton>
-    </Tooltip>
-  )
-}
+const ImageButton = ({ value, onChange }) => (
+  <Tooltip title="image" placement="bottom">
+    <ToolbarButton
+      // eslint-disable-next-line
+      onClick={e => onChange(insertImageStrategy(value.change()))}>
+      <ImageIcon />
+    </ToolbarButton>
+  </Tooltip>
+)
 
 /**
  * Function that specifies the keyboard shortcuts to use for images.

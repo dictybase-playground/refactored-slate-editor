@@ -139,26 +139,26 @@ const OrderedListButton = ({ value, onChange }) => {
 
   return (
     <Tooltip title="ctrl + shift + n" placement="bottom">
-      <ToolbarButton onClick={handleClick}>
+      <ToolbarButton
+        // eslint-disable-next-line
+        onClick={handleClick}>
         <FormatListNumberedIcon />
       </ToolbarButton>
     </Tooltip>
   )
 }
 
-const UnorderedListButton = ({ value, onChange }) => {
-  const handleClick = e => {
-    onChange(unorderedListStrategy(value.change()))
-  }
-
-  return (
-    <Tooltip title="ctrl + shift + l" placement="bottom">
-      <ToolbarButton onClick={handleClick}>
-        <FormatListBulletedIcon />
-      </ToolbarButton>
-    </Tooltip>
-  )
-}
+const UnorderedListButton = ({ value, onChange }) => (
+  <Tooltip title="ctrl + shift + l" placement="bottom">
+    <ToolbarButton
+      // eslint-disable-next-line
+      onClick={e => {
+        onChange(unorderedListStrategy(value.change()))
+      }}>
+      <FormatListBulletedIcon />
+    </ToolbarButton>
+  </Tooltip>
+)
 
 /**
  * Function that specifies the keyboard shortcuts to use for lists.

@@ -18,19 +18,17 @@ const ItalicMark = ({ children }) => <em>{children}</em>
 /**
  * Italic button that uses a click handler to connect the button to the editor.
  */
-const ItalicButton = ({ value, onChange }) => {
-  const handleClick = e => {
-    onChange(italicMarkStrategy(value.change()))
-  }
-
-  return (
-    <Tooltip title="ctrl + i" placement="bottom">
-      <ToolbarButton onClick={handleClick}>
-        <FormatItalicIcon />
-      </ToolbarButton>
-    </Tooltip>
-  )
-}
+const ItalicButton = ({ value, onChange }) => (
+  <Tooltip title="ctrl + i" placement="bottom">
+    <ToolbarButton
+      // eslint-disable-next-line
+      onClick={e => {
+        onChange(italicMarkStrategy(value.change()))
+      }}>
+      <FormatItalicIcon />
+    </ToolbarButton>
+  </Tooltip>
+)
 
 /**
  * Function that specifies the keyboard shortcut to use for italic.

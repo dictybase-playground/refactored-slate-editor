@@ -18,19 +18,17 @@ const StrikethroughMark = ({ children }) => <del>{children}</del>
 /**
  * Strikethrough button that uses a click handler to connect the button to the editor.
  */
-const StrikethroughButton = ({ value, onChange }) => {
-  const handleClick = e => {
-    onChange(strikethroughMarkStrategy(value.change()))
-  }
-
-  return (
-    <Tooltip title="ctrl + s" placement="bottom">
-      <ToolbarButton onClick={handleClick}>
-        <FormatStrikethroughIcon />
-      </ToolbarButton>
-    </Tooltip>
-  )
-}
+const StrikethroughButton = ({ value, onChange }) => (
+  <Tooltip title="ctrl + s" placement="bottom">
+    <ToolbarButton
+      // eslint-disable-next-line
+      onClick={e => {
+        onChange(strikethroughMarkStrategy(value.change()))
+      }}>
+      <FormatStrikethroughIcon />
+    </ToolbarButton>
+  </Tooltip>
+)
 
 /**
  * Function that specifies the keyboard shortcut to use for strikethrough.

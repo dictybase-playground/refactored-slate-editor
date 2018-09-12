@@ -31,47 +31,41 @@ const AlignmentNode = ({ children, attributes, node: { data } }) => (
 /**
  * Button components that use click handlers to connect the buttons to the editor.
  */
-const AlignmentLeftButton = ({ value, onChange }) => {
-  const handleClick = e => {
-    onChange(alignmentMarkStrategy(value.change(), "left"))
-  }
+const AlignmentLeftButton = ({ value, onChange }) => (
+  <Tooltip title="⌘ + shift + l" placement="bottom">
+    <ToolbarButton
+      // eslint-disable-next-line
+      onClick={e => {
+        onChange(alignmentMarkStrategy(value.change(), "left"))
+      }}>
+      <FormatAlignLeftIcon />
+    </ToolbarButton>
+  </Tooltip>
+)
 
-  return (
-    <Tooltip title="⌘ + shift + l" placement="bottom">
-      <ToolbarButton onClick={handleClick}>
-        <FormatAlignLeftIcon />
-      </ToolbarButton>
-    </Tooltip>
-  )
-}
+const AlignmentCenterButton = ({ value, onChange }) => (
+  <Tooltip title="⌘ + shift + c" placement="bottom">
+    <ToolbarButton
+      // eslint-disable-next-line
+      onClick={e => {
+        onChange(alignmentMarkStrategy(value.change(), "center"))
+      }}>
+      <FormatAlignCenterIcon />
+    </ToolbarButton>
+  </Tooltip>
+)
 
-const AlignmentCenterButton = ({ value, onChange }) => {
-  const handleClick = e => {
-    onChange(alignmentMarkStrategy(value.change(), "center"))
-  }
-
-  return (
-    <Tooltip title="⌘ + shift + c" placement="bottom">
-      <ToolbarButton onClick={handleClick}>
-        <FormatAlignCenterIcon />
-      </ToolbarButton>
-    </Tooltip>
-  )
-}
-
-const AlignmentRightButton = ({ value, onChange }) => {
-  const handleClick = e => {
-    onChange(alignmentMarkStrategy(value.change(), "right"))
-  }
-
-  return (
-    <Tooltip title="⌘ + shift + r" placement="bottom">
-      <ToolbarButton onClick={handleClick}>
-        <FormatAlignRightIcon />
-      </ToolbarButton>
-    </Tooltip>
-  )
-}
+const AlignmentRightButton = ({ value, onChange }) => (
+  <Tooltip title="⌘ + shift + r" placement="bottom">
+    <ToolbarButton
+      // eslint-disable-next-line
+      onClick={e => {
+        onChange(alignmentMarkStrategy(value.change(), "right"))
+      }}>
+      <FormatAlignRightIcon />
+    </ToolbarButton>
+  </Tooltip>
+)
 
 /**
  * Function that specifies the keyboard shortcuts to use for alignment.

@@ -60,19 +60,17 @@ const LinkNode = ({ attributes, children, node: { data } }) => (
 /**
  * Button components that use click handlers to connect to the editor.
  */
-const LinkButton = ({ value, onChange }) => {
-  const handleClick = e => {
-    onChange(insertLinkStrategy(value.change()))
-  }
-
-  return (
-    <Tooltip title="ctrl + k" placement="bottom">
-      <ToolbarButton onClick={handleClick}>
-        <LinkIcon />
-      </ToolbarButton>
-    </Tooltip>
-  )
-}
+const LinkButton = ({ value, onChange }) => (
+  <Tooltip title="ctrl + k" placement="bottom">
+    <ToolbarButton
+      // eslint-disable-next-line
+      onClick={e => {
+        onChange(insertLinkStrategy(value.change()))
+      }}>
+      <LinkIcon />
+    </ToolbarButton>
+  </Tooltip>
+)
 
 /**
  * Function that specifies the keyboard shortcuts to use for links.

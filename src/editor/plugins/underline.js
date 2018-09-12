@@ -18,19 +18,17 @@ const UnderlineMark = ({ children }) => <u>{children}</u>
 /**
  * Underline button that uses a click handler to connect the button to the editor.
  */
-const UnderlineButton = ({ value, onChange }) => {
-  const handleClick = e => {
-    onChange(underlineMarkStrategy(value.change()))
-  }
-
-  return (
-    <Tooltip title="ctrl + u" placement="bottom">
-      <ToolbarButton onClick={handleClick}>
-        <FormatUnderlinedIcon />
-      </ToolbarButton>
-    </Tooltip>
-  )
-}
+const UnderlineButton = ({ value, onChange }) => (
+  <Tooltip title="ctrl + u" placement="bottom">
+    <ToolbarButton
+      // eslint-disable-next-line
+      onClick={e => {
+        onChange(underlineMarkStrategy(value.change()))
+      }}>
+      <FormatUnderlinedIcon />
+    </ToolbarButton>
+  </Tooltip>
+)
 
 /**
  * Function that specifies the keyboard shortcut to use for underline.

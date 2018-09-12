@@ -79,26 +79,25 @@ const FontFamilyMark = ({ children, mark: { data } }) => (
 /**
  * Dropdown component that connects to the editor.
  */
-const Dropdown = ({ value, onChange, classes }) => {
-  const handleChange = ({ target: { value: fontFamilyIndex } }) => {
-    onChange(fontFamilyMarkStrategy({ value, fontFamilyIndex }))
-  }
-
-  return (
-    <form className={classes.root}>
-      <FormControl className={classes.formControl}>
-        <InputLabel>Font Family</InputLabel>
-        <Select value="font-family" onChange={handleChange}>
-          {FontFamilyList.map((font, index) => (
-            <MenuItem key={`font-family-${index}`} value={index}>
-              {font.name}
-            </MenuItem>
-          ))}
-        </Select>
-      </FormControl>
-    </form>
-  )
-}
+const Dropdown = ({ value, onChange, classes }) => (
+  <form className={classes.root}>
+    <FormControl className={classes.formControl}>
+      <InputLabel>Font Family</InputLabel>
+      <Select
+        value="font-family"
+        // eslint-disable-next-line
+        onChange={({ target: { value: fontFamilyIndex } }) => {
+          onChange(fontFamilyMarkStrategy({ value, fontFamilyIndex }))
+        }}>
+        {FontFamilyList.map((font, index) => (
+          <MenuItem key={`font-family-${index}`} value={index}>
+            {font.name}
+          </MenuItem>
+        ))}
+      </Select>
+    </FormControl>
+  </form>
+)
 
 const FontFamilyDropdown = withStyles(styles)(Dropdown)
 
