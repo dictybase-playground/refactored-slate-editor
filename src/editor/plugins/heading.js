@@ -7,10 +7,9 @@ import ToolbarButton from "editor/toolbar/ToolbarButton"
  * Functions to set the heading blocks.
  */
 const headingStrategy = (change, heading) => {
-  change.setBlocks({
-    type: heading,
-    data: { heading, currentBlockType: change.value.blocks.first().type },
-  })
+  change.setBlocks(heading)
+
+  return change
 }
 
 const headingH1 = change => headingStrategy(change, "h1")
