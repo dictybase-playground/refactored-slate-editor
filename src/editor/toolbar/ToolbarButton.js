@@ -16,16 +16,16 @@ const styles = theme => ({
  * Material-UI button that has a click handler attached to it.
  */
 
-const ToolbarButton = ({ children, onClick, classes, ...props }) => {
-  const handleClick = e => {
-    isFunction(onClick) && onClick(e)
-  }
-
-  return (
-    <Button className={classes.button} onClick={handleClick} {...props}>
-      {children}
-    </Button>
-  )
-}
+const ToolbarButton = ({ children, onClick, classes, ...props }) => (
+  <Button
+    className={classes.button}
+    // eslint-disable-next-line
+    onClick={e => {
+      isFunction(onClick) && onClick(e)
+    }}
+    {...props}>
+    {children}
+  </Button>
+)
 
 export default withStyles(styles)(ToolbarButton)
